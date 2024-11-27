@@ -5,7 +5,7 @@ export default function Page() {
     <div
       className="flex items-center justify-center min-h-screen"
       style={{
-        backgroundImage: "url('https://img.freepik.com/free-photo/press-reporter-fallowing-leads-case_23-2149579751.jpg?t=st=1731935800~exp=1731939400~hmac=e5a65f6e8b56fce1cf5390a0e7cc717d7943078c83abde1834aebda148d5cf90&w=1480')",
+        backgroundImage: "url('https://img.freepik.com/free-photo/blue-geometric-composition-paperboard-background-with-copyspace_24972-348.jpg?t=st=1732713080~exp=1732716680~hmac=cff7ab612b774a5c3ec8a6b0027681a2953d773001a7368995031f10bf72b7a4&w=1480')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
