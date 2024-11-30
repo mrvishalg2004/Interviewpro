@@ -57,6 +57,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const Header = () => {
     const path = usePathname()

@@ -1,5 +1,6 @@
 // File: app/document.jsx
 import { Html, Head, Main, NextScript } from 'next/document'
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Document() {
   return (

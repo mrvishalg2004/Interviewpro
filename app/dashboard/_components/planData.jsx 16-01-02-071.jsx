@@ -1,5 +1,6 @@
 import React from "react";
 import PlanData from "../../utils/planData";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const PricingPlans = () => {
   const plans = [
     {

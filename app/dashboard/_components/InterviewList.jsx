@@ -51,6 +51,7 @@ import { useUser } from "@clerk/nextjs";
 import { desc, eq } from "drizzle-orm";
 import React, { useEffect, useState } from "react";
 import InterviewItemCard from "./InterviewItemCard";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const InterviewList = () => {
   const { user } = useUser();

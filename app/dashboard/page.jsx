@@ -1,7 +1,7 @@
 import React from "react";
 import AddNewInterview from "./_components/AddNewInterview";
 import InterviewList from "./_components/InterviewList";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const Dashboard = () => {
   return (
     <div className="p-10">

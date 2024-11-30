@@ -31,6 +31,7 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const InterviewItemCard = ({ interview }) => {
     const router = useRouter();

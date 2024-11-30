@@ -11,7 +11,7 @@
 // }
 
 // export default DashboardLayout;
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import React from "react";
 import { Header } from "./_components/Header";
 
