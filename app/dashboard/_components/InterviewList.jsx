@@ -112,7 +112,7 @@ const InterviewList = () => {
       {/* Loading State */}
       {loading ? (
         <div className="text-center my-10">
-          <div className="loader">Loading...</div>
+          <div className="loader">Wait the data is fetching....!!</div>
         </div>
       ) : (
         <div className="my-3">
