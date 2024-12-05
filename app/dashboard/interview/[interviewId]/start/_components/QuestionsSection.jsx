@@ -59,7 +59,7 @@ const QuestionsSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
           <h2
             key={index}
             className={`p-2 bg-secondary rounded-full text-xs md:text-sm text-center cursor-pointer transition-colors duration-300 ${
-              activeQuestionIndex === index && 'bg-blue-600 text-white'
+              activeQuestionIndex === index && 'bg-blue-500 text-white'
             }`}
           >
             Question #{index + 1}

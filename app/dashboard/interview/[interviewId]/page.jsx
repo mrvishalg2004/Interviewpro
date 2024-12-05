@@ -7,6 +7,9 @@ import { Lightbulb, WebcamIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
+import { Camera } from "lucide-react";
+import { MdPhotoCamera } from "react-icons/md";
+
 
 function Interview({ params }) {
   const [interviewData, setInterviewData] = useState();
@@ -60,7 +63,21 @@ function Interview({ params }) {
             />
           ) : (
             <>
-              <WebcamIcon className="h-72 my-7 border rounded-lg w-full p-20 bg-secondary" />
+              {/* <WebcamIcon className="h-72 my-7 border rounded-lg w-full p-20 bg-secondary" /> */}
+              <div 
+  className="h-72 my-7 border rounded-lg w-full p-20 bg-secondary"
+  style={{ 
+    backgroundImage: "url('/webcam.png')", 
+    backgroundSize: "50%", /* Adjust size as needed (e.g., 50%, 100px, etc.) */
+    backgroundRepeat: "no-repeat", /* Prevents the image from tiling */
+    backgroundPosition: "center" /* Keeps the icon centered */
+  }}
+/>
+
+
+
+
+
               <Button
                 className="w-full"
                 variant="ghost"

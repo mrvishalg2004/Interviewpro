@@ -163,6 +163,8 @@ import { db } from "@/utils/db";
 import { UserAnswer } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMicrophoneAlt } from "@fortawesome/free-solid-svg-icons";
 
 const RecordAnswerSection = ({
   mockInterviewQuestion,
@@ -261,20 +263,21 @@ const RecordAnswerSection = ({
 
   if (error) return <p>Web Speech API is not available in this browser 🤷‍</p>;
   return (
-    <div className="flex justify-cente items-center flex-col">
-      <div className="flex flex-col my-20 justify-center items-center bg-black rounded-lg p-5">
-        <Image
+    <div className="flex justify-center items-center flex-col mt-10">
+      <div className="h-42 w-42 p-6 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 rounded-full shadow-lg mb-5">
+        <FontAwesomeIcon icon={faMicrophoneAlt} className="text-white text-6xl" />
+
+        {/* <Image
           src={"/webcam.png"}
           width={200}
           height={200}
           className="absolute"
           alt="webcam"
           priority
-        />
+        /> */}
         {/* <Webcam
           style={{ height: 300, width: "100%", zIndex: 10 }}
-          mirrored={true}
-        /> */}
+          mirrored={true}         /> */}
       </div>
       <Button
         disabled={loading}
