@@ -80,6 +80,13 @@ You can preview the project by visiting the live demo here:
     NEXT_PUBLIC_INFORMATION=<add description according to you>
 
 
+### Team
+- Vishal Golhar - [Linkedin](https://www.linkedin.com/in/vishalgolhar/) --  [Github](https://github.com/mrvishalg2004) 
+
+- Punam Channe - [Linkedin](https://www.linkedin.com/in/punamchanne51/) --  [Github](https://github.com/punamchanne) 
+
+- Pranay Sangolkar- [Linkedin](https://www.linkedin.com/in/pranay-sangolkar-ab52782ab/) --  [Github](https://github.com/the-pranay) 
+
 
 ### Copyright Information
 
