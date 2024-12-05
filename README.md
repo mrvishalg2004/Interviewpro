@@ -13,12 +13,13 @@ You can preview the project by visiting the live demo here:
 ## [Live Demo of Interview Mocking System](https://liveinterviewpro.vercel.app/)  
 
 ## Screenshot Images
+![Interview Mocking System Screenshot 2](Preview/poster.png)  
 
-![Interview Mocking System Screenshot 1](path-to-screenshot1.png)  
-*Image 1: The Interview Preparation Dashboard.*
+![Interview Mocking System Screenshot 1](Preview/1.png)  
 
-![Interview Mocking System Screenshot 2](path-to-screenshot2.png)  
-*Image 2: Real-Time Interview Feedback and Speech-to-Text Transcription.*
+![Interview Mocking System Screenshot 2](Preview/2.png)  
+
+![Interview Mocking System Screenshot 2](Preview/3.png) 
 
 ## Technology Used
 
