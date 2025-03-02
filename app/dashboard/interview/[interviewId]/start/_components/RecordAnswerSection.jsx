@@ -80,7 +80,7 @@
 //     const mockJsonResp = result.response
 //       .text()
 //       .replace("```json", "")
-//       .replace("```", "");
+//        ("```", "");
 
 //     console.log(
 //       "🚀 ~ file: RecordAnswerSection.jsx:47 ~ SaveUserAnswer ~ mockJsonResp:",

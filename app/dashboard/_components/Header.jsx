@@ -51,6 +51,8 @@
 //     )
 // }
 
+
+
 "use client"
 import { UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
@@ -58,6 +60,39 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 import { SpeedInsights } from "@vercel/speed-insights/next";
+// import Image from 'next/image'
+// import Link from 'next/link'
+// import { usePathname } from 'next/navigation'
+// import React, { useEffect } from 'react'
+// import { SpeedInsights } from "@vercel/speed-insights/next";
+
+// export const Header = () => {
+//     const path = usePathname()
+//     useEffect(() => {
+//         console.log(path);
+//     })
+
+//     const navItems = [
+//         { label: 'Dashboard', href: '/dashboard' },
+//         { label: 'Frequently Ask Questions', href: '/questionpage' },
+//         { label: 'How it works?', href: '/planData' },
+//     ];
+
+//     return (
+//         <div className='flex p-4 items-center justify-between bg-secondary shadow-sm h-20'>
+//             <Image src={'/logo.png'} alt='logo' width={400} height={400} />
+//             <ul className='hidden md:flex gap-6'>
+//                 {navItems.map((item, index) => (
+//                     <li key={index} className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path == item.href && 'text-primary font-bold'}`}>
+//                         <Link href={item.href}>{item.label}</Link>
+//                     </li>
+//                 ))}
+//             </ul>
+//             <UserButton />
+//         </div>
+//     )
+// }
+
 
 export const Header = () => {
     const path = usePathname()

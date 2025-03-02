@@ -75,9 +75,6 @@ function Interview({ params }) {
 />
 
 
-
-
-
               <Button
                 className="w-full"
                 variant="ghost"

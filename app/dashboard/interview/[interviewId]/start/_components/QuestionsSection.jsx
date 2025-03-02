@@ -71,7 +71,7 @@ const QuestionsSection = ({ mockInterviewQuestion, activeQuestionIndex }) => {
       <div className='relative my-5 p-5 bg-blue-50 rounded-lg shadow-md'>
         <h2 className='text-md md:text-lg font-medium text-gray-800'>
           {mockInterviewQuestion[activeQuestionIndex]?.question}
-        </h2>
+        </h2> 
         <Volume2
           className='absolute top-2 right-2 cursor-pointer text-gray-500 hover:text-gray-700'
           onClick={() => textToSpeach(mockInterviewQuestion[activeQuestionIndex]?.question)}

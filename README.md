@@ -81,7 +81,7 @@ You can preview the project by visiting the live demo here:
     NEXT_PUBLIC_INFORMATION=<add description according to you>
 
 
-### Team
+### Team   
 - Vishal Golhar - [Linkedin](https://www.linkedin.com/in/vishalgolhar/) --  [Github](https://github.com/mrvishalg2004) 
 
 - Punam Channe - [Linkedin](https://www.linkedin.com/in/punamchanne51/) --  [Github](https://github.com/punamchanne) 

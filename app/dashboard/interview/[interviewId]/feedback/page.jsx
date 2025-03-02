@@ -35,9 +35,10 @@ const Feedback = ({params}) => {
       {feedbackList?.length ==0 ?
       <h2 className='font-bold text-lg text-green-500'>No interview Feedback</h2>
       : <>
-      <h2 className='text-primary text-lg my-2'>
-      Your interview performance rat ing: <strong>7/10</strong>
-      </h2>
+      {/* <h2 className='text-primary text-lg my-2'>
+      Your interview performance rating : <strong>7/10</strong>
+      </h2> */}
+
       <h2 className='text-sm text-gray-500'>Below are interview questions along with the correct answers, your responses, and feedback for improving your performance in future interviews.</h2>
       {feedbackList&&feedbackList.map((item,index)=>(
         <Collapsible key={index} className='mt-7'>
