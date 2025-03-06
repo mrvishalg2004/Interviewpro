@@ -93,4 +93,4 @@ You can preview the project by visiting the live demo here:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-© 2024 Vishal Golhar. All rights reserved..
+© 2025 Vishal Golhar. All rights reserved..
