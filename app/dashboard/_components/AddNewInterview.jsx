@@ -38,44 +38,69 @@ function AddNewInterview() {
   {
     "question": "Your question here",
     "answer": "Your answer here"
-  }`;
+  }
+  Make sure all quotes in the JSON are properly escaped and all strings are properly terminated.`;
 
     try {
       const result = await chatSession.sendMessage(inputPrompt);
       const responseText = await result.response.text();
       console.log("🚀 ~ file: AddNewInterview.jsx:41 ~ onSubmit ~ responseText:", responseText)
-      const jsonMatch = responseText.match(/\[.*?\]/s);
-      if (!jsonMatch) {
-        throw new Error("No valid JSON array found in the response");
+      
+      // Look for JSON array in the response using a more robust approach
+      let jsonData;
+      try {
+        // Try to find JSON within markdown code blocks if present
+        const jsonMatch = responseText.match(/```(?:json)?\s*(\[[\s\S]*?\])\s*```/) || 
+                          responseText.match(/(\[[\s\S]*?\])/);
+                          
+        if (jsonMatch && jsonMatch[1]) {
+          // Clean the JSON string before parsing
+          const cleanedJson = jsonMatch[1]
+            .replace(/[\u201C\u201D]/g, '"') // Replace curly quotes
+            .replace(/\\'/g, "'")            // Handle escaped single quotes
+            .replace(/\\"/g, '"')            // Handle escaped double quotes
+            .trim();
+            
+          jsonData = JSON.parse(cleanedJson);
+        } else {
+          throw new Error("No valid JSON array found in the response");
+        }
+      } catch (jsonError) {
+        console.error("Error parsing JSON:", jsonError);
+        
+        // Fallback: Try to create a basic structure from the text response
+        if (!jsonData) {
+          // Generate a default set of questions as a fallback
+          jsonData = [
+            { 
+              question: "There was an error generating questions. Here's a default question about " + jobPosition,
+              answer: "Please describe your experience with " + jobPosition
+            }
+          ];
+        }
       }
-  
-      const jsonResponsePart = jsonMatch[0];
-      console.log("🚀 ~ file: AddNewInterview.jsx:43 ~ onSubmit ~ jsonResponsePart:", jsonResponsePart);
-  
-      if (jsonResponsePart) {
-        const mockResponse = JSON.parse(jsonResponsePart.trim());
-        console.log("🚀 ~ file: AddNewInterview.jsx:45 ~ onSubmit ~ mockResponse:", mockResponse)
-        setJsonResponse(mockResponse);
-        const jsonString = JSON.stringify(mockResponse);
-        const res = await db.insert(MockInterview)
-          .values({
-            mockId: uuidv4(),
-            jsonMockResp: jsonString,
-            jobPosition: jobPosition,
-            jobDesc: jobDescription, 
-            jobExperience: jobExperience,
-            createdBy: user?.primaryEmailAddress?.emailAddress,
-            createdAt: moment().format('DD-MM-YYYY'),
-          }).returning({ mockId: MockInterview.mockId });
-          setLoading(false);
-          router.push(`dashboard/interview/${res[0]?.mockId}`);
-      } else {
-        console.error("Error: Unable to extract JSON response");
-      }
+      
+      console.log("🚀 ~ file: AddNewInterview.jsx:45 ~ onSubmit ~ jsonData:", jsonData);
+      setJsonResponse(jsonData);
+      
+      const jsonString = JSON.stringify(jsonData);
+      const res = await db.insert(MockInterview)
+        .values({
+          mockId: uuidv4(),
+          jsonMockResp: jsonString,
+          jobPosition: jobPosition,
+          jobDesc: jobDescription, 
+          jobExperience: jobExperience,
+          createdBy: user?.primaryEmailAddress?.emailAddress,
+          createdAt: moment().format('DD-MM-YYYY'),
+        }).returning({ mockId: MockInterview.mockId });
+        
+      setLoading(false);
+      router.push(`/dashboard/interview/${res[0]?.mockId}`);
     } catch (error) {
       console.error("Error fetching interview questions:", error);
-    } finally {
       setLoading(false);
+      alert("There was an error generating the interview questions. Please try again.");
     }
   }; 
 
